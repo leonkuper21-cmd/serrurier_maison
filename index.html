@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Serrurier Maison — Montréal & Rive Sud | Montreal & South Shore</title>
+  <meta name="description" content="Lockout services, commercial & residential lock installation — Montréal & Rive Sud / Montreal & South Shore. Call or text: 514-991-6682." />
+  <style>
+    :root{
+      --blue:#1157b0; --red:#d51f29; --dark:#0f2337; --light:#f7f9fc;
+      --btn:#0b57d0; --btn-t:#ffffff;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:#12202e;background:#fff;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+    /* Hero */
+    .hero{
+      background: linear-gradient(90deg, var(--red) 0%, #f0c4c7 20%, #ffffff 50%, #c6d6ef 80%, var(--blue) 100%);
+      color:#091825; text-align:center; padding:56px 16px 28px;
+    }
+    .hero h1{margin:0 0 8px;font-size: clamp(28px,6vw,56px); font-weight:800;}
+    .hero p.sub{margin:6px 0 10px; font-size: clamp(16px,2.8vw,24px); font-weight:600}
+    .hero .phone{display:inline-flex; align-items:center; gap:10px; font-size: clamp(18px,3.2vw,28px); font-weight:800; margin:8px 0 18px}
+    .actions{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin:8px 0 0}
+    .btn{display:inline-block; padding:14px 20px; border-radius:12px; background:var(--btn); color:var(--btn-t); font-weight:700; font-size:16px; box-shadow:0 6px 16px rgba(0,0,0,.18); transition:.2s transform ease, .2s opacity ease;}
+    .btn:hover{transform:translateY(-2px)}
+    .btn.outline{background:#ffffff;color:var(--btn);border:2px solid var(--btn)}
+    /* Layout */
+    main{max-width:1024px;margin:0 auto;padding:24px 16px 60px}
+    section{background:#ffffff;border:1px solid #e6eef7;border-radius:16px;padding:18px 16px;margin:14px 0;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+    h2{margin:0 0 12px;font-size: clamp(20px,3.2vw,28px); color:var(--dark)}
+    ul.services{padding-left:18px; margin:8px 0}
+    ul.services li{margin:6px 0}
+    form .row{display:grid; grid-template-columns:1fr; gap:12px}
+    @media (min-width:720px){ form .row{grid-template-columns:1fr 1fr} }
+    label{font-weight:600; font-size:14px}
+    input, select, textarea{width:100%; padding:12px 12px; border:1px solid #cfd8e3; border-radius:10px; font:inherit; background:#fbfdff;}
+    textarea{min-height:120px; resize:vertical}
+    .notice{font-size:12px; color:#4a5b71}
+    .submitbar{display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:6px}
+    .ok{color:#0b7a28; font-weight:700; display:none}
+    .err{color:#b00020; font-weight:700; display:none}
+    footer{padding:24px 16px 48px; text-align:center; color:#4a5b71}
+    .brand{font-weight:800}
+
+    /* Language switch */
+    .lang-switch {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      display: flex;
+      gap: 6px;
+      z-index: 9999;
+    }
+    .lang-switch button {
+      padding: 6px 12px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 2px solid var(--btn);
+      background: white;
+      color: var(--btn);
+      cursor: pointer;
+    }
+    .lang-switch button.active {
+      background: var(--btn);
+      color: white;
+    }
+    /* default: show FR, hide EN */
+    [data-lang="en"] { display: none; }
+  </style>
+  <link rel="icon" type="image/png" href="assets/favicon.png"/>
+</head>
+<body>
+
+  <!-- Language Switch -->
+  <div class="lang-switch" aria-label="Language switch">
+    <button id="switch-fr" class="active" aria-pressed="true">FR</button>
+    <button id="switch-en" aria-pressed="false">EN</button>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <h1 data-lang="fr">Serrurier Maison</h1>
+    <h1 data-lang="en">Serrurier Maison</h1>
+
+    <p class="sub" data-lang="fr">
+      Service d'urgence — Lockout • Installation de serrures commerciales &amp; résidentielles — Montréal &amp; <strong>Rive Sud</strong>
+    </p>
+    <p class="sub" data-lang="en">
+      24/7 Lockout • Commercial &amp; Residential Lock Installation — Montreal &amp; <strong>South Shore</strong>
+    </p>
+
+    <div class="phone" data-lang="fr">📞 <a href="tel:+15149916682">514-991-6682</a></div>
+    <div class="phone" data-lang="en">📞 <a href="tel:+15149916682">514-991-6682</a></div>
+
+    <div class="actions">
+      <a class="btn" data-lang="fr" href="tel:+15149916682">Appeler / Call Now</a>
+      <a class="btn outline" data-lang="fr" href="sms:+15149916682?body=Bonjour%20!%20J'ai%20besoin%20d'un%20serrurier.">Texter / Text Now</a>
+
+      <a class="btn" data-lang="en" href="tel:+15149916682">Call Now</a>
+      <a class="btn outline" data-lang="en" href="sms:+15149916682?body=Hello!%20I%20need%20a%20locksmith.">Text Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- SERVICES -->
+    <section id="services">
+      <h2 data-lang="fr">Nos Services</h2>
+      <h2 data-lang="en">Our Services</h2>
+
+      <ul class="services" data-lang="fr">
+        <li>Interventions d'urgence 24/7 (Lockout)</li>
+        <li>Installation &amp; réparation de serrures commerciales</li>
+        <li>Installation &amp; rekey de serrures résidentielles</li>
+        <li>Serrures haute sécurité &amp; serrures intelligentes (smart locks)</li>
+        <li>Systèmes passe-partout (Master key) pour entreprises</li>
+        <li>Ouverture de coffres &amp; réparation de serrures</li>
+        <li>Déverrouillage automobile &amp; service d'allumage</li>
+        <li>Appartements, bureaux, entrepôts — Montréal &amp; Rive Sud</li>
+      </ul>
+
+      <ul class="services" data-lang="en">
+        <li>24/7 Emergency Lockout Services</li>
+        <li>Commercial Lock Installation &amp; Repair</li>
+        <li>Residential Lock Installation &amp; Rekeying</li>
+        <li>High‑Security &amp; Smart Lock Systems</li>
+        <li>Master Key Systems for Businesses</li>
+        <li>Safe Opening &amp; Lock Repair</li>
+        <li>Car Lockout &amp; Ignition Services</li>
+        <li>Apartments, Offices, Warehouses — Montreal &amp; South Shore</li>
+      </ul>
+    </section>
+
+    <!-- FORM -->
+    <section id="quote">
+      <h2 data-lang="fr">Demander un devis gratuit</h2>
+      <h2 data-lang="en">Request a Free Estimate</h2>
+
+      <form id="serviceForm">
+        <div class="row">
+          <div>
+            <label for="name" data-lang="fr">Nom</label>
+            <label for="name" data-lang="en">Name</label>
+            <input id="name" name="name" required placeholder="Votre nom / Your name" />
+          </div>
+          <div>
+            <label for="phone" data-lang="fr">Téléphone</label>
+            <label for="phone" data-lang="en">Phone</label>
+            <input id="phone" name="phone" inputmode="tel" placeholder="+1 514 991 6682" required />
+          </div>
+          <div>
+            <label for="email" data-lang="fr">Courriel</label>
+            <label for="email" data-lang="en">Email</label>
+            <input id="email" name="email" type="email" placeholder="vous@exemple.com / you@example.com" />
+          </div>
+          <div>
+            <label for="city" data-lang="fr">Ville / Quartier</label>
+            <label for="city" data-lang="en">City / Location</label>
+            <input id="city" name="city" placeholder="Montréal, Brossard, Longueuil…" />
+          </div>
+        </div>
+
+        <div style="margin-top:8px">
+          <span data-lang="fr" style="font-weight:600; font-size:14px;">Type de service</span>
+          <span data-lang="en" style="font-weight:600; font-size:14px;">Service Required</span>
+          <div class="checkgroup">
+            <label class="chip"><input type="checkbox" name="service" value="Lockout"> <span data-lang="fr">Lockout</span><span data-lang="en">Lockout</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Commercial Lock Install"> <span data-lang="fr">Installation commerciale</span><span data-lang="en">Commercial Lock Install</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Residential Lock Install"> <span data-lang="fr">Installation résidentielle</span><span data-lang="en">Residential Lock Install</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Smart Lock System"> <span data-lang="fr">Smart lock</span><span data-lang="en">Smart Lock System</span></label>
+            <label class="chip"><input type="checkbox" name="service" value="Rekey"> <span data-lang="fr">Rekey</span><span data-lang="en">Rekeying</span></label>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top:8px">
+          <div>
+            <label for="details" data-lang="fr">Détails</label>
+            <label for="details" data-lang="en">Details / Additional Info</label>
+            <textarea id="details" name="details" placeholder="Décrivez la situation… / Describe the situation…"></textarea>
+          </div>
+        </div>
+
+        <div class="notice" style="margin-top:8px" data-lang="fr">
+          En envoyant, vous acceptez d’être contacté par téléphone, texto ou courriel.
+        </div>
+        <div class="notice" style="margin-top:8px" data-lang="en">
+          By sending, you agree to be contacted by phone, text or email.
+        </div>
+
+        <div class="submitbar">
+          <button class="btn" type="submit" data-lang="fr">Envoyer</button>
+          <button class="btn" type="submit" data-lang="en">Send Request</button>
+          <span class="ok" id="okMsg" data-lang="fr">✔ Envoyé ! Nous vous contacterons très bientôt.</span>
+          <span class="ok" id="okMsgEn" data-lang="en">✔ Sent! We will contact you shortly.</span>
+          <span class="err" id="errMsg" data-lang="fr">✖ Erreur. Réessayez ou appelez-nous.</span>
+          <span class="err" id="errMsgEn" data-lang="en">✖ Error. Please try again or call us.</span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand" data-lang="fr">Serrurier Maison</div>
+    <div class="brand" data-lang="en">Serrurier Maison</div>
+    <div data-lang="fr">Montréal &amp; Rive Sud — 514-991-6682</div>
+    <div data-lang="en">Montreal &amp; South Shore — 514-991-6682</div>
+  </footer>
+
+  <script>
+    // ===== Language Switch =====
+    function switchLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = (el.getAttribute('data-lang') === lang) ? '' : 'none';
+      });
+      document.getElementById('switch-fr').classList.toggle('active', lang === 'fr');
+      document.getElementById('switch-en').classList.toggle('active', lang === 'en');
+      document.getElementById('switch-fr').setAttribute('aria-pressed', lang === 'fr');
+      document.getElementById('switch-en').setAttribute('aria-pressed', lang === 'en');
+      localStorage.setItem('lang', lang);
+    }
+    document.getElementById('switch-fr').addEventListener('click', () => switchLang('fr'));
+    document.getElementById('switch-en').addEventListener('click', () => switchLang('en'));
+    switchLang(localStorage.getItem('lang') || 'fr');
+
+    // ===== Form submission (no activation, mailto fallback) =====
+    const form = document.getElementById('serviceForm');
+    const okMsg = document.getElementById('okMsg');
+    const okMsgEn = document.getElementById('okMsgEn');
+    const errMsg = document.getElementById('errMsg');
+    const errMsgEn = document.getElementById('errMsgEn');
+
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      [okMsg, okMsgEn, errMsg, errMsgEn].forEach(n => n.style.display='none');
+
+      const fd = new FormData(form);
+      const data = {};
+      fd.forEach((v,k)=>{
+        if (data[k]) {
+          if (!Array.isArray(data[k])) data[k]=[data[k]];
+          data[k].push(v);
+        } else {
+          data[k]=v;
+        }
+      });
+      if (data.service && Array.isArray(data.service)) data.service = data.service.join(', ');
+
+      const lang = localStorage.getItem('lang') || 'fr';
+      const subject = (lang === 'fr') ? "Demande de service — Serrurier" : "Locksmith Service Request";
+
+      const lines = [];
+      for (const k in data) lines.push(k + ": " + data[k]);
+      const mailto = "mailto:leonkuper21@gmail.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+      window.location.href = mailto;
+
+      (lang === 'fr' ? okMsg : okMsgEn).style.display = 'inline';
+    });
+  </script>
+</body>
+</html>
